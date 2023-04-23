@@ -2,7 +2,7 @@ import logging
 import zipfile
 
 # specify the name of the ZIP archive file
-zip_filename = 'D:/Steeleye/DLTINS_20210117_01of01.zip'
+zip_filename = 'DLTINS_20210117_01of01.zip'
 
 # specify the name of the XML file you want to extract
 xml_filename = 'DLTINS_20210117_01of01.xml'
