@@ -7,7 +7,7 @@ logging.basicConfig(filename='example.log', level=logging.DEBUG)
 
 try:
     # Parse the XML file
-    tree = ET.parse('D:/Steeleye/DLTINS_20210117_01of01.xml')
+    tree = ET.parse('DLTINS_20210117_01of01.xml')
     root = tree.getroot()
 
     # Extract data from <FinInstrm> elements
