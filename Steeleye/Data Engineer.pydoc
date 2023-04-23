@@ -1,0 +1,100 @@
+
+For steeleyeweblink.py
+
+Module: <module>
+
+Functions:
+	None
+
+Classes:
+	None
+
+Variables:
+	url (str): The URL of the web page to request data from.
+	response (requests.models.Response): The response object returned from the request.
+	logger (logging.Logger): The logger object used for logging errors.
+	root (xml.etree.ElementTree.Element): The root element of the XML content returned from the API.
+	download_link (xml.etree.ElementTree.Element): The download link element from the API response.
+	url (str): The download URL extracted from the XML content.
+	file_name (str): The name of the file to save the downloaded data as.
+
+...
+
+
+...
+
+For ziptoxml.py
+
+Classes:
+None
+
+Functions:
+None
+
+Variables:
+zip_filename: str - The name of the ZIP archive file.
+xml_filename: str - The name of the XML file you want to extract.
+logger: logging.Logger - A logger instance used for logging messages.
+
+try:
+Opens the ZIP archive file for reading and checks if the specified XML file exists in the archive.
+
+Returns:
+None
+except:
+Catches any exceptions raised during the execution of the try block and logs them using the logger instance.
+
+Returns:
+None
+
+...
+
+
+...
+
+For xmltocsv.py
+Module for extracting data from an XML file and writing it to a CSV file.
+
+This module uses the xml.etree.ElementTree module to parse an XML file and extract data from specific
+<FinInstrm> elements. The extracted data is then written to a CSV file using the csv module.
+
+...
+
+
+...
+
+For s3bucket.py
+
+Description: This module contains functions to interact with AWS S3 resources
+using Python Boto3 library
+
+Functions:
+
+list_bucket(): lists all the existing S3 buckets
+create_bucket(bucket_name, region=None): creates a new S3 bucket with the provided name and region
+upload_file(file_name, bucket, object_name=None): uploads a file to the specified S3 bucket with
+the optional object_name parameter
+download_file(file_name, bucket, object_name): downloads a file from the specified S3 bucket to
+the local file system with the provided file_name parameter
+Usage:
+
+Import the module aws_s3_operations.py in your Python script
+Call the desired function with appropriate parameters to interact with AWS S3 resources
+Example:
+import aws_s3_operations
+
+Listing Buckets
+aws_s3_operations.list_bucket()
+
+Creating a new Bucket
+result_create = aws_s3_operations.create_bucket("my-new-bucket", "us-east-2")
+
+Uploading a file to Bucket
+result_upload = aws_s3_operations.upload_file("path/to/local/file.csv", "my-new-bucket", "s3-object-name.csv")
+
+Downloading a file from Bucket
+result_download = aws_s3_operations.download_file("path/to/local/downloaded-file.csv", "my-new-bucket", "s3-object-name.csv")
+
+Note: Before using these functions, you need to have appropriate AWS access and secret access keys
+configured in your system environment variables or in your Boto3 configuration file.
+"""
